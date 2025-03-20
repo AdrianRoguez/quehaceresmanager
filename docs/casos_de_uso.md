@@ -51,4 +51,8 @@ La aplicación **QuehaceresManager** permite a los usuarios gestionar sus tareas
 
 ---
 
+# Diagrama
+
 <img src="/images/diagrama-casos-de-uso.png">
+
+---
