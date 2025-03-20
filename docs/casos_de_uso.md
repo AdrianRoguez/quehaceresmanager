@@ -1,83 +1,42 @@
-# Casos de Uso - QuehaceresManager
+# QuehaceresManager - Casos de Uso
 
-## 1. Actores
+## Descripción
 
-- **Usuario**: Persona que utiliza la aplicación para gestionar sus tareas.
-- **Sistema**: La aplicación que procesa las acciones del usuario.
-
----
-
-## 2. Casos de Uso
-
-### **UC01 - Crear una tarea**
-**Actor:** Usuario  
-**Descripción:** Permite al usuario agregar una nueva tarea con nombre, fecha de vencimiento y prioridad.  
-**Flujo principal:**  
-1. El usuario selecciona la opción "Agregar tarea".
-2. El sistema muestra un formulario para ingresar los detalles de la tarea.
-3. El usuario completa el formulario y presiona "Guardar".
-4. El sistema almacena la tarea en el fichero y la muestra en la lista de tareas.
+La aplicación **QuehaceresManager** permite a los usuarios gestionar sus tareas de manera eficiente. Los usuarios pueden crear, editar, eliminar y marcar tareas como completadas, así como recibir notificaciones sobre sus pendientes.
 
 ---
 
-### **UC02 - Editar una tarea**
-**Actor:** Usuario  
-**Descripción:** Permite modificar los datos de una tarea existente.  
-**Flujo principal:**  
-1. El usuario selecciona una tarea y elige la opción "Editar".
-2. El sistema muestra los detalles actuales de la tarea.
-3. El usuario realiza las modificaciones y presiona "Guardar".
-4. El sistema actualiza la tarea en el fichero y refleja los cambios en la lista.
+## Elementos del Diagrama de Casos de Uso
+
+| Elemento                                         | Descripción                                                                                      |
+|--------------------------------------------------|--------------------------------------------------------------------------------------------------|
+| **Actor: Usuario**                               | Persona que utiliza la aplicación para gestionar sus tareas.                                     |
+| **Actor: Sistema**                               | La aplicación que procesa las acciones del usuario.                                              |
+| **Actor: Sistema de Notificaciones**             | Sistema externo encargado de enviar recordatorios de tareas.                                     |
+| **Caso de Uso: Crear una tarea**                 | Permite al usuario agregar una nueva tarea con nombre, fecha de vencimiento y prioridad.         |
+| **Caso de Uso: Editar una tarea**                | Permite modificar los datos de una tarea existente.                                              |
+| **Caso de Uso: Eliminar una tarea**              | Permite al usuario eliminar una tarea de la lista.                                               |
+| **Caso de Uso: Marcar tarea como completada**    | Permite cambiar el estado de una tarea a "Completada".                                           |
+| **Caso de Uso: Ver lista de tareas**             | Muestra todas las tareas registradas, organizadas por fecha de vencimiento o prioridad.          |
+| **Caso de Uso: Filtrar y ordenar tareas**        | Permite al usuario aplicar filtros y ordenar las tareas por diferentes criterios.                |
+| **Caso de Uso: Configurar fecha de vencimiento** | Permite asignar o modificar la fecha de vencimiento de una tarea.                                |
+| **Caso de Uso: Enviar Notificación**             | Envía una notificación al Usuario cuando una tarea está próxima a vencer (`<<include>>`).        |
+| **Caso de Uso: Recordatorio de Tarea**           | Extiende el caso de uso "Enviar Notificación" cuando una tarea está por vencer (`<<extend>>`).   |
 
 ---
 
-### **UC03 - Eliminar una tarea**
-**Actor:** Usuario  
-**Descripción:** Permite al usuario eliminar una tarea de la lista.  
-**Flujo principal:**  
-1. El usuario selecciona una tarea y elige la opción "Eliminar".
-2. El sistema muestra un mensaje de confirmación.
-3. El usuario confirma la eliminación.
-4. El sistema borra la tarea del fichero y la elimina.
+## Relaciones entre los Elementos
 
----
-
-### **UC04 - Marcar tarea como completada**
-**Actor:** Usuario  
-**Descripción:** Permite cambiar el estado de una tarea a "Completada".  
-**Flujo principal:**  
-1. El usuario selecciona una tarea y presiona "Marcar como completada".
-2. El sistema cambia el estado de la tarea y la muestra visualmente tachada.
-3. La tarea se mantiene en la lista pero con un indicador de que ha sido completada.
-
----
-
-### **UC05 - Ver lista de tareas**
-**Actor:** Usuario  
-**Descripción:** Muestra todas las tareas registradas, organizadas por fecha de vencimiento o prioridad.  
-**Flujo principal:**  
-1. El usuario accede a la pantalla principal de la aplicación.
-2. El sistema muestra todas las tareas almacenadas, ordenadas según la configuración predeterminada (por fecha o importancia).
-
----
-
-### **UC06 - Filtrar y ordenar tareas**
-**Actor:** Usuario  
-**Descripción:** Permite al usuario aplicar filtros y ordenar las tareas por diferentes criterios.  
-**Flujo principal:**  
-1. El usuario selecciona la opción "Filtrar/Ordenar".
-2. El sistema muestra opciones de filtrado (por fecha, prioridad o estado).
-3. El usuario elige un criterio y el sistema actualiza la lista de tareas.
-
----
-
-### **UC07 - Configurar fecha de vencimiento**
-**Actor:** Usuario  
-**Descripción:** Permite asignar o modificar la fecha de vencimiento de una tarea.  
-**Flujo principal:**  
-1. El usuario selecciona una tarea y elige "Modificar fecha de vencimiento".
-2. El sistema muestra un calendario para elegir la nueva fecha.
-3. El usuario selecciona la fecha y confirma la acción.
-4. El sistema guarda el cambio y actualiza la vista de la tarea.
+| Relación                                                  | Descripción                                                                                                     |
+|-----------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------|
+| **Usuario → Crear una tarea**                             | Asociación: El Usuario interactúa con el sistema para agregar una nueva tarea.                                  |
+| **Usuario → Editar una tarea**                            | Asociación: El Usuario interactúa con el sistema para modificar una tarea existente.                            |
+| **Usuario → Eliminar una tarea**                          | Asociación: El Usuario interactúa con el sistema para eliminar una tarea de la lista.                           |
+| **Usuario → Marcar tarea como completada**                | Asociación: El Usuario cambia el estado de una tarea a "Completada".                                            |
+| **Usuario → Ver lista de tareas**                         | Asociación: El Usuario puede visualizar todas sus tareas organizadas.                                           |
+| **Usuario → Filtrar y ordenar tareas**                    | Asociación: El Usuario filtra y ordena las tareas según diferentes criterios.                                   |
+| **Usuario → Configurar fecha de vencimiento**             | Asociación: El Usuario asigna o modifica la fecha de vencimiento de una tarea.                                  |
+| **Configurar fecha de vencimiento → Enviar Notificación** | **Inclusión** (`<<include>>`): Cuando el usuario establece una fecha de vencimiento, se envía una notificación. |
+| **Enviar Notificación → Recordatorio de Tarea**           | **Extensión** (`<<extend>>`): Si la tarea está próxima a vencer, se envía un recordatorio adicional.            |
 
 ---
