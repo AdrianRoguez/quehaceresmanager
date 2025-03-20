@@ -50,3 +50,5 @@ La aplicación **QuehaceresManager** permite a los usuarios gestionar sus tareas
 | **Enviar Notificación → Recordatorio de Tarea**           | **Extensión** (`<<extend>>`): Se envía un recordatorio adicional si la tarea está próxima a vencer.             |
 
 ---
+
+<img src="images/diagrama-casos-de-uso.png">
