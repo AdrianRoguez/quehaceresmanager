@@ -10,11 +10,8 @@ import java.io.IOException;
 public class Main extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/main-screen.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
-
-        scene.getStylesheets().add(getClass().getResource("/css/style.css").toExternalForm());
-
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/login.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("QuehaceresManager");
         stage.setScene(scene);
         stage.show();

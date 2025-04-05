@@ -8,17 +8,19 @@
     fx:controller="es.adrianroguez.controllers.MainController"
     stylesheets="@css/style.css"
     fx:id="fondo"
-    prefWidth="600" prefHeight="400">
-
-    <!-- Botón "Usuario" en la esquina superior derecha -->
-    <Button fx:id="usuarioButton" text="Usuario" layoutX="500" layoutY="10"
-        AnchorPane.topAnchor="10"
-        AnchorPane.rightAnchor="10" />
+    prefWidth="600" prefHeight="800">
 
     <!-- Botón "Desconectarse" en la esquina superior izquierda -->
-    <Button fx:id="desconectarseButton" text="Desconectarse" layoutX="10" layoutY="10"
+    <Button fx:id="desconectarseButton" text="" layoutX="10" layoutY="10"
         AnchorPane.topAnchor="10"
-        AnchorPane.leftAnchor="10" />
+        AnchorPane.leftAnchor="10"
+        onAction="#goBack" />
+
+    <!-- Botón "Usuario" en la esquina superior derecha -->
+    <Button fx:id="userButton" text="" layoutX="500" layoutY="10"
+        AnchorPane.topAnchor="10"
+        AnchorPane.rightAnchor="10"
+        onAction="#openUser" />
 
     <!-- Botón circular "+" en la esquina inferior derecha -->
     <Button fx:id="agregarButton" text="+" layoutX="550" layoutY="350"
