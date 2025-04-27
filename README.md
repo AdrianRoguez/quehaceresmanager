@@ -37,4 +37,4 @@ Sigue estos pasos para ejecutar el proyecto localmente:
 
 1. **Clona el repositorio en tu máquina local:**
    ```bash
-   git clone https://github.com/adrianroguez/quehaceres-manager.git
+   git clone https://github.com/adrianroguez/quehaceres-manager
