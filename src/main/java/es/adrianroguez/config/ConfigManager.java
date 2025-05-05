@@ -6,7 +6,6 @@ import java.io.InputStreamReader;
 import java.util.Properties;
 
 public class ConfigManager {
-
     public static class ConfigProperties {
 
         static String path;
@@ -14,11 +13,10 @@ public class ConfigManager {
         private static final Properties properties = new Properties();
 
         static {
-
         }
 
         /**
-         * Metodo estatico para obtener una propiedad
+         * Metodo estatico para obtener una propiedad.
          **/
         public static String getProperty(String key) {
             return properties.getProperty(key);

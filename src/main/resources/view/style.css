@@ -1,0 +1,59 @@
+.root {
+  -fx-background-image: url("images/background.jpg");
+  -fx-background-size: cover;
+}
+
+#taskListView {
+  -fx-background-image: url("images/listBackground.jpg");
+  -fx-background-size: cover;
+  -fx-background-color: transparent;
+}
+
+#taskListView .list-cell {
+  -fx-background-color: transparent;
+  -fx-alignment: center;
+}
+
+#taskListView .list-cell:selected {
+  -fx-background-color: rgba(200, 200, 200, 0.5);
+  -fx-text-fill: black;
+}
+
+.combo-box,
+.text-field,
+.password-field {
+  -fx-background-color: #f0f0f0;
+  -fx-border-color: #cccccc;
+  -fx-border-radius: 8px;
+  -fx-background-radius: 8px;
+  -fx-padding: 8px;
+  -fx-font-size: 14px;
+}
+
+.combo-box:hover,
+.text-field:hover,
+.password-field:hover {
+  -fx-border-color: #999999;
+}
+
+.combo-box:focused,
+.text-field:focused,
+.password-field:focused {
+  -fx-border-color: #7aabdb;
+  -fx-effect: dropshadow(three-pass-box, rgba(66, 133, 244, 0.3), 6, 0, 0, 0);
+}
+
+.button {
+  -fx-background-color: #a3c8f2;
+  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 10, 0.5, 2, 2);
+  -fx-transition: all 0.2s ease;
+  -fx-padding: 12px;
+}
+
+.button:hover {
+  -fx-background-color: #7aabdb;
+  -fx-cursor: hand;
+  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.8), 10, 0.5, 2, 2);
+  -fx-scale-x: 0.95;
+  -fx-scale-y: 0.95;
+}
