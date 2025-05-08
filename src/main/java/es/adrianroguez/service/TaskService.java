@@ -79,7 +79,7 @@ public class TaskService extends ConnectionDB {
     }
 
     public TaskModel getTaskById(int id) {
-        String sql = "SELECT * FROM tasks WHERE id = ?";
+        String sql = "SELECT * FROM tasks WHERE id ='" + id + "'";
         try (Connection connection = connect();
                 PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
             preparedStatement.setInt(1, id);

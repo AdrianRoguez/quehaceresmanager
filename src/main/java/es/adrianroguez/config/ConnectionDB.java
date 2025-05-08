@@ -23,7 +23,7 @@ public abstract class ConnectionDB {
         }
     }
 
-    protected Connection connect() throws SQLException {
+    public Connection connect() throws SQLException {
         return DriverManager.getConnection("jdbc:sqlite:" + urlDb);
     }
 
